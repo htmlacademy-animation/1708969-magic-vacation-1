@@ -133,6 +133,14 @@
       height: 1.1rem;
     }
   }
+
+  .screen--intro.active & {
+    animation-name: fadeIntroMessage;
+    animation-duration: 700ms;
+    animation-timing-function: cubic-bezier(.21,.61,.74,.94);
+    animation-fill-mode: both;
+    animation-delay: 550ms;
+  }
 }
 
 .intro__label {
@@ -162,3 +170,5 @@
     font-size: 48px;
   }
 }
+
+@include animation-fade-in($name: fadeIntroMessage, $ty: 30px);
