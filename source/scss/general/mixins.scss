@@ -58,3 +58,29 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin animation-fade-in($name, $tx: 0px, $ty: 0px) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translate($tx, $ty);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+@mixin animation-fade-out($name, $tx: 0px, $ty: 0px) {
+  @keyframes #{$name} {
+    from {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+    to {
+      opacity: 0;
+      transform: translate($tx, $ty);
+    }
+  }
+}

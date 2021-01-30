@@ -123,6 +123,32 @@
     font-size: 1.4rem;
     line-height: 1.5rem;
   }
+
+  .swiper-slide & {
+    animation-name: fadeOutSlideText;
+    animation-duration: 700ms;
+    animation-timing-function: cubic-bezier(.21,.61,.74,.94);
+    animation-fill-mode: both;
+  }
+  
+  .swiper-slide-prev & {
+    animation-delay: 200ms;
+  }
+
+  .swiper-slide-active &,
+  .swiper-slide-next & {
+    animation-name: fadeInSlideText;
+    animation-duration: 700ms;
+    animation-timing-function: cubic-bezier(.21,.61,.74,.94);
+    animation-fill-mode: both;
+  }
+
+  .swiper-slide-next & {
+    animation-delay: 200ms;
+    @media(max-width: $tablet) and (orientation: portrait) {
+      animation: none;
+    } 
+  }  
 }
 
 .slider__controls {
@@ -276,3 +302,6 @@
     }
   }
 }
+
+@include animation-fade-in($name: fadeInSlideText, $tx: 50px);
+@include animation-fade-out($name: fadeOutSlideText, $tx: -50px);

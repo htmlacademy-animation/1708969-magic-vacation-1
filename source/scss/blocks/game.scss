@@ -109,6 +109,27 @@
   flex-direction: column;
 }
 
+.chat {
+  &__footer {
+    .form {
+      &__field {
+        width: auto;
+        margin-left: auto;
+        flex-grow: 1;
+        .screen--game.active & {
+          animation-name: animateField;
+          animation-duration: 350ms;
+          animation-timing-function: ease;
+          animation-fill-mode: both;
+        }
+      }
+      &__button {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
 .game__buttons {
   position: fixed;
   left: 0;
@@ -120,4 +141,13 @@
 .game__button {
   margin: 0 30px 30px;
   display: block;
+}
+
+@keyframes animateField {
+  from {
+    flex-grow: 0.0001;
+  }
+  to {
+    flex-grow: 1;
+  }
 }
